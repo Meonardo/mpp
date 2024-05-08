@@ -253,7 +253,7 @@ else
             TOOLCHAIN_NAME="aarch64-linux-android-4.9"
             PLATFORM=$ANDROID_NDK/platforms/${NATIVE_API_LEVEL}/arch-arm64
         fi
-        ANDROID_STL="system"
+        ANDROID_STL="c++_shared"
     else
         # From NDK 18, GCC is deprecated
         TOOLCHAIN_NAME=""

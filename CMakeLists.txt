@@ -294,8 +294,8 @@ endif(MSVC)
 # ----------------------------------------------------------------------------
 # Share library option
 # ----------------------------------------------------------------------------
-option(ENABLE_STATIC "Build shared library" ON)
-option(ENABLE_SHARED "Build shared library" OFF)
+option(ENABLE_STATIC "Build shared library" OFF)
+option(ENABLE_SHARED "Build shared library" ON)
 
 # ----------------------------------------------------------------------------
 # scan all LOG_TAG for log information and generate module header file
