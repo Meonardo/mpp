@@ -2,10 +2,10 @@
 
 BUILD_TYPE="Release"
 ANDROID_ABI="arm64-v8a"
-ANDROID_STL="system"
+ANDROID_STL="c++_shared"
 
 #Specify Android NDK path if needed
-#ANDROID_NDK=
+ANDROID_NDK="/home/meonardo/Android/gstreamer/1.24.6/cerbero/build/android-ndk-25"
 
 #Specify cmake if needed
 #CMAKE_PROGRAM=
@@ -30,8 +30,9 @@ ${CMAKE_PROGRAM} -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}                   \
       -DANDROID_TOOLCHAIN_NAME=${TOOLCHAIN_NAME}                            \
       -DANDROID_NATIVE_API_LEVEL=${NATIVE_API_LEVEL}                        \
       -DANDROID_STL=${ANDROID_STL}                                          \
-      -DMPP_PROJECT_NAME=mpp                                                \
-      -DVPU_PROJECT_NAME=vpu                                                \
+      -DCMAKE_INSTALL_PREFIX="./rockchip-mpp"                               \
+      -DMPP_PROJECT_NAME=rockchip_mpp                                       \
+      -DVPU_PROJECT_NAME=rockchip_vpu                                       \
       -DHAVE_DRM=ON                                                         \
       ../../../
 
@@ -64,3 +65,5 @@ fi
 #adb shell rk_log_test
 #adb shell rk_thread_test
 #adb logcat -d|tail -30
+
+make install
